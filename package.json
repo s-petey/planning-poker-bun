@@ -1,0 +1,7 @@
+{
+  "name": "planning-poker-bun",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ]
+}
