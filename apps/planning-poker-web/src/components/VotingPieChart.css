@@ -1,0 +1,15 @@
+.conic-gradient {
+	flex-direction: row !important;
+  gap: 4rem;
+}
+
+.conic-cone {
+	flex: 2;
+}
+
+.conic-list {
+	flex: 1;
+	width: auto !important;
+	display: grid;
+	margin: 0 !important;
+}
