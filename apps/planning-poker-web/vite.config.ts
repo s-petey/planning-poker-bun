@@ -8,12 +8,11 @@ export default defineConfig(({ mode }) => {
 				? {
 						proxy: {
 							'/socket': {
-								target: 'ws://127.0.0.1:3000',
-								// '/api': `http://${process.env.VITE_API_URL}:${process.env.VITE_API_PORT}`
+								target: `ws://${process.env.VITE_API_URL}:${process.env.VITE_API_PORT}`, 
 								ws: true
 							},
 
-							'/api': 'http://127.0.0.1:3000'
+							'/api': `http://${process.env.VITE_API_URL}:${process.env.VITE_API_PORT}`
 						}
 				  }
 				: {},

@@ -178,7 +178,7 @@ const app = new Elysia()
     console.log('hello glob', headers, path, query);
     throw new Error('nope glob...');
   })
-  .listen({ port: 3000, hostname: '127.0.0.1' });
+  .listen({ port: Bun.env.VITE_API_PORT, hostname: Bun.env.VITE_API_URL });
 
 // TODO: Gate this or have some other logging?
 console.log(
