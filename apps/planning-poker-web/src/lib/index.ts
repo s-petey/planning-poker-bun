@@ -10,4 +10,6 @@ if (combinedUrl === undefined) {
 	combinedUrl = `http://${url}:${port}`;
 }
 
+console.log('combinedUrl: ', combinedUrl)
+
 export const app = edenTreaty<App>(combinedUrl);
