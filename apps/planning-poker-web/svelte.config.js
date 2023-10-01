@@ -20,6 +20,9 @@ const config = {
 		adapter: adapter(),
 		alias: {
 			'@components': 'src/components'
+		},
+		env: {
+			publicPrefix: 'VITE_'
 		}
 	}
 };
