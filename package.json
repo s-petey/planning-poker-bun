@@ -1,6 +1,12 @@
 {
   "name": "planning-poker-bun",
   "private": true,
+  "scripts": {
+    "dev:web": "cd apps/planning-poker-web && bun run dev",
+    "dev:api": "cd apps/planning-poker-api && bun run dev",
+    "build:web": "cd apps/planning-poker-web && bun run build",
+    "build:api": "cd apps/planning-poker-api && bun run build"
+  },
   "workspaces": [
     "apps/*"
   ]
