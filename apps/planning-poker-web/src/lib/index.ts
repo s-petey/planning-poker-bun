@@ -1,6 +1,6 @@
 import { edenTreaty } from '@elysiajs/eden';
 import type { App } from 'planning-poker-api';
-import env from '$env/static/public';
+import * as env from '$env/static/public';
 
 // place files you want to import through the `$lib` alias in this folder.
 let combinedUrl = env?.VITE_FULL_API_URL;
