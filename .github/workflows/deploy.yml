@@ -26,10 +26,10 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Preset API Image Name
-        run: echo "IMAGE_API_URL=API_$(echo ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:$(echo ${{ github.sha }} | cut -c1-7) | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+        run: echo "IMAGE_API_URL=$(echo ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:$(echo ${{ github.sha }} | cut -c1-7) | tr '[:upper:]' '[:lower:]')_API" >> $GITHUB_ENV
 
       - name: Preset WEB Image Name
-        run: echo "IMAGE_WEB_URL=WEB_$(echo ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:$(echo ${{ github.sha }} | cut -c1-7) | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+        run: echo "IMAGE_WEB_URL=$(echo ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:$(echo ${{ github.sha }} | cut -c1-7) | tr '[:upper:]' '[:lower:]')_WEB" >> $GITHUB_ENV
 
       - name: Build and push Docker Image for API
         uses: docker/build-push-action@v4
