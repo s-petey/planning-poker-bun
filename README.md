@@ -1,5 +1,15 @@
 # planning-poker-bun
 
+## Table of Contents
+
+- [Running Locally](#running-locally)
+- [Docker](#docker-configuration)
+- [App Descriptions](#app-descriptions)
+  - [Api](#api)
+  - [Web](#web)
+
+---
+
 ## A bun workspace application for your own planning poker application for scrum or agile meetings!
 
 It is easy to host and run locally, however setting it up for separate deployments may be a bit more involved.
@@ -33,7 +43,26 @@ First make an `.env.local` file (rename `.env.local.example`) update to whicheve
 cd apps/planning-poker-web && bun run dev
 ```
 
-### Apps descriptions
+### Docker Configuration
+
+Both docker files will require the same or more environment variables as defined in the `.env.local.example` files. These may need to be configured in the docker window or through the CLI.
+
+API:
+
+```bash
+VITE_API_PORT = 3001
+VITE_API_URL = 0.0.0.0
+```
+
+WEB:
+
+```bash
+VITE_API_PORT = 3001
+VITE_API_URL = host.docker.internal
+ORIGIN = http://localhost:3000
+```
+
+### App descriptions
 
 #### API
 
