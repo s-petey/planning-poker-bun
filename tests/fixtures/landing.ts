@@ -16,7 +16,7 @@ export class LandingPage {
   async goToRoomPage(roomName: string) {
     await this.inputRoom.click();
     await this.inputRoom.fill(roomName);
-    await this.createOrJoinButton.click();
+    await this.page.keyboard.press('Enter');
   }
 
   async goto() {

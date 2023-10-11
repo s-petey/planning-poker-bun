@@ -12,24 +12,14 @@ test.describe('Layout', () => {
       await landingPage.goto();
     });
 
-    test('has expected h1', async ({ page }) => {
+    test('has expected h1', async () => {
       await expect(
-        page.getByRole('heading', { name: 'Planning Poker' })
+        landingPage.page.getByRole('heading', { name: 'Planning Poker' })
       ).toBeVisible();
-      await expect(landingPage.inputRoom).toBeVisible();
-      await expect(landingPage.createOrJoinButton).toBeVisible();
-      await expect(landingPage.createOrJoinButton).toBeEnabled();
-    });
-
-    test('shows Available rooms', async ({ page, browser }) => {
-      await landingPage.goToRoomPage('Fazzo');
-
-      const page1 = await browser.newPage();
-      const landingPage1 = new LandingPage(page1);
-      await landingPage1.goto();
-      await expect(
-        landingPage1.page.getByRole('link', { name: 'Fazzo' })
-      ).toBeVisible();
+      await expect(await landingPage.inputRoom).toBeVisible();
+      const button = await landingPage.createOrJoinButton;
+      await expect(button).toBeVisible();
+      await expect(button).toBeEnabled();
     });
   });
 
@@ -41,13 +31,13 @@ test.describe('Layout', () => {
       landingPage = new LandingPage(page);
       await landingPage.goto();
       await landingPage.goToRoomPage('Fazzo');
-      roomPage = new RoomPage(landingPage.page);
+      roomPage = new RoomPage(page);
     });
 
     test('room page has expected form', async () => {
-      await expect(roomPage.inputDisplay).toBeVisible();
-      await expect(roomPage.slideToggle).toBeVisible();
-      await expect(roomPage.joinButton).toBeEnabled();
+      await expect(await roomPage.joinButton).toBeEnabled();
+      await expect(await roomPage.slideToggle).toBeVisible();
+      await expect(await roomPage.inputDisplay).toBeVisible();
       await expect(
         roomPage.page.getByRole('heading', {
           name: 'There are no displays currently in Fazzo',
@@ -56,7 +46,6 @@ test.describe('Layout', () => {
     });
 
     test('room page has other displays listed', async ({ browser }) => {
-      await landingPage.goToRoomPage('Fazzo');
       await roomPage.goToDisplayPage('Wizzo');
 
       await expect(

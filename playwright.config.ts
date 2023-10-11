@@ -10,10 +10,12 @@ const config: PlaywrightTestConfig = {
     {
       command: 'bun run dev:api',
       port: 3000,
+      reuseExistingServer: !process.env.CI,
     },
     {
       command: 'bun run dev:web',
       port: 5173,
+      reuseExistingServer: !process.env.CI,
     },
   ],
   testDir: 'tests',
