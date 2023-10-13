@@ -2,7 +2,7 @@ import type { PlaywrightTestConfig } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
   // retries: 2,
-  workers: 1,
+  // workers: 1,
   use: {
     baseURL: 'http://localhost:5173',
   },

@@ -6,7 +6,8 @@
     "dev:api": "cd apps/planning-poker-api && bun run dev",
     "build:web": "cd apps/planning-poker-web && bun run build",
     "build:api": "cd apps/planning-poker-api && bun run build",
-    "test:integration": "bunx playwright test"
+    "test:e2e": "bunx playwright test",
+    "test:e2e:ci": "bunx playwright test show-report"
   },
   "devDependencies": {
     "@playwright/test": "^1.38.1"
