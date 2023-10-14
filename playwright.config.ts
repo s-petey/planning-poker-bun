@@ -3,7 +3,7 @@ import type { PlaywrightTestConfig } from '@playwright/test';
 const config: PlaywrightTestConfig = {
   retries: 2,
   // workers: 1,
-  reporter: process.env.CI ? 'github' : 'html',
+  reporter: 'html',
   testDir: 'tests',
   testMatch: /(.+\.)?(test|spec)\.[jt]s/,
   use: {
