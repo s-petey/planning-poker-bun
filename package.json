@@ -8,6 +8,9 @@
     "build:api": "cd apps/planning-poker-api && bun run build",
     "test:e2e": "bunx playwright test"
   },
+  "dependencies": {
+    "elysia": "latest"
+  },
   "devDependencies": {
     "@playwright/test": "^1.38.1"
   },

@@ -4,10 +4,9 @@ WORKDIR /app
 COPY package.json .
 COPY tsconfig.json .
 COPY apps/planning-poker-api  ./apps/planning-poker-api
-COPY apps/planning-poker-web  ./apps/planning-poker-web
 COPY bun.lockb .
 
-RUN bun install --production
+RUN bun install
 
 ENV NODE_ENV production
 CMD ["bun", "apps/planning-poker-api/src/index.ts"]

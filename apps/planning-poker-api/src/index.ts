@@ -3,7 +3,7 @@ import {
   addOrUpdateDisplay,
   getAllRooms,
   getRoomById,
-  registerRoom,
+  registerOrJoinRoom,
   resetRoomCards,
   updateDisplayCardValue,
   updateRoom,
@@ -68,7 +68,7 @@ const app = new Elysia()
         .post('/api/rooms', ({ body }) => {
           const { label, name, showVotes } = body;
 
-          const updatedRoom = registerRoom({
+          const updatedRoom = registerOrJoinRoom({
             label,
             name,
             showVotes,
