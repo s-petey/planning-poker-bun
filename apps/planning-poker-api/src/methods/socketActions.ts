@@ -5,13 +5,18 @@ import { getRoomMap } from './roomStore';
 
 // TODO: maybe add an "auth ctx" for a room && display? hiding those routes?
 
-export function registerRoom({
+export function registerOrJoinRoom({
   label,
   name,
   showVotes,
 }: Omit<Room, 'id'>): RoomSocketModel {
   const id = kebabStyle(name);
   const roomMap = getRoomMap();
+
+  const existing = roomMap.get(id);
+  if (existing !== undefined) {
+    return existing;
+  }
 
   roomMap.set(id, {
     displays: [],
