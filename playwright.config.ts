@@ -1,8 +1,11 @@
 import type { PlaywrightTestConfig } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
-  // retries: 2,
-  workers: 1,
+  retries: 2,
+  // workers: 1,
+  reporter: 'html',
+  testDir: 'tests',
+  testMatch: /(.+\.)?(test|spec)\.[jt]s/,
   use: {
     baseURL: 'http://localhost:5173',
   },
@@ -18,8 +21,6 @@ const config: PlaywrightTestConfig = {
       reuseExistingServer: !process.env.CI,
     },
   ],
-  testDir: 'tests',
-  testMatch: /(.+\.)?(test|spec)\.[jt]s/,
 };
 
 export default config;

@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 export default defineConfig(({ mode }) => {
 	return {
 		server:
-			mode === 'development' || mode === 'test'
+			mode === 'development'
 				? {
 						proxy: {
 							'/socket': {
