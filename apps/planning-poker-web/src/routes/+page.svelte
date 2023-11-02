@@ -12,7 +12,7 @@
 	});
 </script>
 
-<h2>Search for or select your room</h2>
+<h2 class="h2">Search for or select your room</h2>
 
 <form method="POST" class="grid gap-4 justify-items-center text-center" use:enhance>
 	<label class="label">
