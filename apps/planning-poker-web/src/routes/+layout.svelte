@@ -12,6 +12,8 @@
 	import { LightSwitch } from '@skeletonlabs/skeleton';
 	import { AppBar } from '@skeletonlabs/skeleton';
 	import { AppShell } from '@skeletonlabs/skeleton';
+
+	import GitSvg from '@components/GitSvg.svelte';
 </script>
 
 <svelte:head>
@@ -34,4 +36,28 @@
 		<slot />
 	</section>
 	<!-- ---- / ---- -->
+	<svelte:fragment slot="pageFooter">
+		<footer class="grid gap-4 grid-cols-1 justify-items-center text-center mb-4">
+			<p>
+				© {new Date().getFullYear()} Sam Peterson. All rights reserved.
+			</p>
+			<p>
+				<a
+					class="cursor-pointer badge-icon variant-soft-primary w-8 h-8"
+					href="https://github.com/llmaboi"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<GitSvg
+						data={{
+							class: 'w-6 h-6'
+						}}
+					/>
+				</a>
+			</p>
+			<p>
+				<a href="/about">About</a>
+			</p>
+		</footer>
+	</svelte:fragment>
 </AppShell>

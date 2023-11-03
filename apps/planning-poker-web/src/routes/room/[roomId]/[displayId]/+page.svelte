@@ -76,7 +76,7 @@
 
 <noscript>Javascript is required to run this part of the application.</noscript>
 
-<h2>{room.name}</h2>
+<h2 class="h2">{room.name}</h2>
 
 <DisplayHeading
 	data={{

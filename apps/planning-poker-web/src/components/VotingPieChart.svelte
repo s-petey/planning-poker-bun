@@ -44,11 +44,6 @@
 	});
 </script>
 
-<section class="w-full md:w-3/4 lg:w-1/2 p-16">
-	<ConicGradient
-		class="flex flex-column"
-		regionCone="border-2 border-primary-500"
-		stops={conicStops}
-		legend
-	/>
+<section class="w-full md:w-3/4 lg:w-1/2 p-16 flex justify-center items-center mx-auto">
+	<ConicGradient regionCone="border-2 border-primary-500" stops={conicStops} legend />
 </section>
