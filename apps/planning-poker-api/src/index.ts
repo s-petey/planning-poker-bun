@@ -91,6 +91,7 @@ const app = new Elysia()
     return getRoomById(id);
   })
   .ws('/socket', {
+    idleTimeout: 60 * 25,
     open(ws) {
       ws.subscribe(ws.data.query.roomId);
       // Add new display to room
