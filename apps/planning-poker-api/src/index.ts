@@ -175,10 +175,10 @@ const app = new Elysia()
   )
 
   // TODO: Probably remove...
-  .get('*', ({ headers, path, query }) => {
-    console.log('hello glob', headers, path, query);
-    throw new Error('nope glob...');
-  })
+  // .get('*', ({ headers, path, query }) => {
+  //   console.log('hello glob', headers, path, query);
+  //   throw new Error('nope glob...');
+  // })
   .listen({
     port: Bun.env.VITE_API_PORT,
     hostname: Bun.env.VITE_API_URL,
