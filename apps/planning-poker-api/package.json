@@ -7,7 +7,7 @@
   },
   "devDependencies": {
     "bun-types": "latest",
-    "@sinclair/typebox": "^0.31.17"
+    "@sinclair/typebox": "^0.32.14"
   },
   "module": "src/index.ts",
   "main": "src/index.ts",
