@@ -1,3 +1,4 @@
+/** @type { import("eslint").Linter.Config } */
 module.exports = {
 	root: true,
 	extends: [
@@ -24,6 +25,12 @@ module.exports = {
 			parser: 'svelte-eslint-parser',
 			parserOptions: {
 				parser: '@typescript-eslint/parser'
+			}
+		},
+		{
+			files: ['./src/routes/+layout.svelte'],
+			rules: {
+				'svelte/no-at-html-tags': 'off'
 			}
 		}
 	]

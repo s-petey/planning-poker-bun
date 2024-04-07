@@ -12,7 +12,7 @@ export const load = async ({ params }) => {
 };
 
 export const actions = {
-	default: async ({ request, params, url }) => {
+	default: async ({ request, params }) => {
 		const data = await request.formData();
 		const displayName = data.get('displayName');
 		const rawIsHost = data.get('isHost');
