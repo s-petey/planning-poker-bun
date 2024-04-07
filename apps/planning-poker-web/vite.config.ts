@@ -1,3 +1,4 @@
+import { purgeCss } from 'vite-plugin-tailwind-purgecss';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
@@ -14,8 +15,8 @@ export default defineConfig(({ mode }) => {
 
 							'/api': `http://${process.env.VITE_API_URL}:${process.env.VITE_API_PORT}`
 						}
-				  }
+					}
 				: {},
-		plugins: [sveltekit()]
+		plugins: [sveltekit(), purgeCss()]
 	};
 });

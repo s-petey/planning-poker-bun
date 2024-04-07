@@ -1,10 +1,4 @@
 <script lang="ts">
-	// Your selected Skeleton theme:
-	import '@skeletonlabs/skeleton/themes/theme-vintage.css';
-
-	// This contains the bulk of Skeletons required styles:
-	import '@skeletonlabs/skeleton/styles/all.css';
-
 	// Finally, your application's global stylesheet (sometimes labeled 'app.css')
 	import '../app.postcss';
 
@@ -17,7 +11,7 @@
 </script>
 
 <svelte:head>
-	{@html `<script>${autoModeWatcher.toString()} autoModeWatcher();</script>`}
+	{@html '<script>(' + autoModeWatcher.toString() + ')();</script>'}
 </svelte:head>
 
 <AppShell>
@@ -25,7 +19,7 @@
 		<AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
 			<svelte:fragment slot="lead">{' '}</svelte:fragment>
 
-			<h1 class="text-center"><a href="/">Planning Poker</a></h1>
+			<h1 class="h1 text-center"><a href="/">Planning Poker</a></h1>
 
 			<svelte:fragment slot="trail"><LightSwitch /></svelte:fragment>
 		</AppBar>
@@ -37,6 +31,10 @@
 	</section>
 	<!-- ---- / ---- -->
 	<svelte:fragment slot="pageFooter">
+		<div class="py-4">
+			<hr />
+		</div>
+
 		<footer class="grid gap-4 grid-cols-1 justify-items-center text-center mb-4">
 			<p>
 				© {new Date().getFullYear()} Sam Peterson. All rights reserved.

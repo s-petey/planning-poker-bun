@@ -5,12 +5,12 @@ export const tailwindColors: readonly (keyof DefaultColors)[] = [
 	'red',
 	'orange',
 	'amber',
-  'lime',
-  'emerald',
-  'cyan',
-  'sky',
-  'purple',
-  'pink'
+	'lime',
+	'emerald',
+	'cyan',
+	'sky',
+	'purple',
+	'pink'
 ] as const;
 
 export function getRandomTailwindColors(count: number) {

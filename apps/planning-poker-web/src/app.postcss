@@ -1,15 +1,11 @@
-/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+/* vintage theme */
 @font-face {
-	/* Reference name */
 	font-family: 'Abril Fatface';
-	/* For multiple files use commas, ex: url(), url(), ... */
-	src: url('/fonts/AbrilFatface-Regular.ttf');
+	src: url('/fonts/AbrilFatface.ttf');
+	font-display: swap;
 }
-
-:root {
-	--theme-font-family-base: 'Abril Fatface', sans-serif;
-	--theme-font-family-heading: 'Abril Fatface', sans-serif;
-	/* ... */
-}
-
-html, body { @apply h-full overflow-hidden; }

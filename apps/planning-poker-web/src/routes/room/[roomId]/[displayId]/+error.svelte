@@ -7,5 +7,5 @@
 
 	<div class="error">{$page.error?.message}</div>
 
-	<a href="/">Go Home</a>
+	<a href="/" class="btn variant-filled">Go Home</a>
 </div>
