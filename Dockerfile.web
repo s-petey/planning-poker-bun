@@ -5,9 +5,7 @@ COPY tsconfig.json .
 COPY bun.lockb .
 COPY ./apps ./apps
 RUN bun install
-CMD [ "/bin/sh" , "-c" , "cd ./apps/planning-poker-web && bun run build" ]
-
-
+RUN bun run build:web
 
 FROM node:20-alpine
 WORKDIR /app
