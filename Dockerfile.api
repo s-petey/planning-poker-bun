@@ -9,6 +9,6 @@ COPY bun.lockb .
 RUN bun install
 
 ENV NODE_ENV production
-CMD ["bun", "--version", ";bun", "apps/planning-poker-api/src/index.ts"]
+CMD ["bun", "apps/planning-poker-api/src/index.ts"]
 
 EXPOSE 3001
