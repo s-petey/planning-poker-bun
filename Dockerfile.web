@@ -1,5 +1,6 @@
-FROM oven/bun AS build
+FROM node:lts AS build
 WORKDIR /app
+RUN npm i -g bun
 COPY package.json .
 COPY tsconfig.json .
 COPY bun.lockb .
