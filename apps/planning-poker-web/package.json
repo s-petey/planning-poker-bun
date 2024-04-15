@@ -1,7 +1,6 @@
 {
 	"name": "planning-poker-web",
 	"version": "0.0.1",
-	"private": true,
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -44,7 +43,7 @@
 	"type": "module",
 	"dependencies": {
 		"@floating-ui/dom": "1.6.3",
-		"planning-poker-api": "workspace:apps/planning-poker-api",
+		"planning-poker-api": "workspace:*",
 		"@elysiajs/eden": "^1.0.11"
 	}
 }
