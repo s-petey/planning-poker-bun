@@ -42,7 +42,7 @@
 			<p>
 				<a
 					class="cursor-pointer badge-icon variant-soft-primary w-8 h-8"
-					href="https://github.com/llmaboi"
+					href="https://github.com/s-petey"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
