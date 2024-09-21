@@ -8,7 +8,7 @@
 	export let data;
 
 	const roomConnection = app.socket.subscribe({
-		$query: {
+		query: {
 			displayId: data.currentDisplay.name,
 			roomId: data.room.id
 		}

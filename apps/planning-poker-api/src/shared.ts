@@ -1,6 +1,4 @@
-import { Static } from '@sinclair/typebox';
-import { t } from 'elysia';
-
+import {type Static, t } from 'elysia';
 
 export const roomSocketModel = t.Object({
     id: t.String(),
