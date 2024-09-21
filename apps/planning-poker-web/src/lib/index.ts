@@ -1,6 +1,6 @@
-import { edenTreaty } from '@elysiajs/eden';
 import type { App } from 'planning-poker-api';
 import { env } from '$env/dynamic/public';
+import { treaty } from '@elysiajs/eden';
 
 // place files you want to import through the `$lib` alias in this folder.
 let combinedUrl = env.VITE_FULL_API_URL;
@@ -14,4 +14,4 @@ if (
 	combinedUrl = `http://${url}:${port}`;
 }
 
-export const app = edenTreaty<App>(combinedUrl);
+export const app = treaty<App>(combinedUrl);

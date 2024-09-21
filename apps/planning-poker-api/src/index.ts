@@ -92,6 +92,12 @@ const app = new Elysia()
   })
   .ws('/socket', {
     idleTimeout: 60 * 25,
+    body: SocketActions,
+    response: roomSocketModel,
+    query: t.Object({
+      roomId: t.String(),
+      displayId: t.String(),
+    }),
     open(ws) {
       ws.subscribe(ws.data.query.roomId);
       // Add new display to room
@@ -100,7 +106,8 @@ const app = new Elysia()
       ws.publish(ws.data.query.roomId, newData);
       ws.send(newData);
     },
-    message(ws, { type, value }) {
+    message(ws, message) {
+      const { type, value } = message;
       if (type === SocketActionTypes.ADD_DISPLAY) {
         const newData = updateDisplayCardValue(value.roomId, {
           cardValue: value.cardValue,
@@ -144,12 +151,6 @@ const app = new Elysia()
     //   console.log('close: ', ws.data.params.roomId);
     //   // roomSockets.delete(ws.data.params.roomId);
     // },
-    query: t.Object({
-      roomId: t.String(),
-      displayId: t.String(),
-    }),
-    body: SocketActions,
-    response: 'roomSocket',
   })
 
   // Displays
